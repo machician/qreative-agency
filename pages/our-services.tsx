@@ -125,13 +125,13 @@ export default function Services() {
 
               {/* CTA - PURE HTML FALLBACK (No Next.js router involved) */}
               <div className="mt-8 text-center flex justify-center relative z-50">
-                <a 
+                <Link 
                   href="/contact-us"
                   className="inline-block bg-orange-400 hover:bg-orange-500 text-white font-bold font-mono py-3 px-8 rounded-full transition-colors shadow-lg cursor-pointer relative z-50"
                   style={{ pointerEvents: 'auto' }}
                 >
                   Ready to Build, Verify, or Launch?
-                </a>
+                </Link>
               </div>
 
             </div>

@@ -25,11 +25,13 @@ export default function ClientLogos({ isDarkMode }: ClientLogosProps) {
         {logos.map((logo, index) => (
           <div key={index} className="flex items-center justify-center h-12 w-24 relative">
              {/* Replace <Image /> with <img src="..." /> if you don't have Next.js optimized images setup */}
-            <img 
-              src={logo.src} 
-              alt={logo.name} 
-              className="max-h-full max-w-full object-contain" 
-            />
+              <Image 
+                src={logo.src} 
+                alt={logo.name} 
+                width={100} 
+                height={50} 
+                className="max-h-full max-w-full object-contain" 
+              />
           </div>
         ))}
       </div>
