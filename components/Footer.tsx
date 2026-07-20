@@ -1,4 +1,5 @@
-// components/Footer.jsx
+// components/Footer.tsx
+
 import { Fragment, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -47,15 +48,18 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
                         rel="noopener noreferrer"
                     >
                         <Image
-                            src="/qa-type.png"
-                            alt="Qreative Agency Logo"
-                            width={isSmallScreen ? 220 : 250}
-                            height={24}
-                            className="sm:mx-auto lg:ml-12"
+                            src="/qa-labs-type.png"
+                            alt="QA Labs Logo"
+                            width={168}
+                            height={53}
+                            className="w-[120px] sm:w-[150px] lg:ml-12 sm:mx-auto h-auto object-contain"
                             priority
+                            quality={100}
                         />
                     </Link>
-                    {/* <a 
+                    {/* Uncomment these if you want to use social icons in the future */}
+                    {/* 
+                    <a 
                         href="https://youtube.com/@shotbymurktsg3411" 
                         className={`${textColor} hover:text-orange-400 md:hidden lg:flex`}
                         target="_blank"
@@ -78,11 +82,12 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
                         rel="noopener noreferrer"
                     >
                         <FaTwitter className={`sm:h-6 sm:w-6 lg:h-6 lg:w-6 rounded-xl border-2 p-1 ${borderColor} ${hoverBorderColor}`} />
-                    </a> */}
+                    </a> 
+                    */}
                 </div>
                 <div className={`text-xs lg:p-3 relative sm:text-center md:text-right md:pb-7 lg:text-right ${textColor}`}>
                     <Fragment>
-                        <p>{`© ${year} qreative agency and the Qreative Agency Logo are trademarks of Qreative, Inc.`}</p>
+                        <p>{`© ${year} QA Labs (formerly Qreative Agency), a subsidiary of The Polymath Company.`}</p>
                     </Fragment>
                 </div>
             </div>
