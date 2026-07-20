@@ -77,7 +77,7 @@ export default function Contact() {
                  {/* Disable Captcha - Set to 'on' if you want captcha */}
                  <input type="hidden" name="_captcha" value="false" />
                  {/* Next URL after submission */}
-                 <input type="hidden" name="_next" value="http://localhost:3000/thank-you" />
+                 <input type="hidden" name="_next" value="http://qreativeagency.co/thank-you" />
 
                  <div>
                    <label className="block text-sm font-medium mb-1">Name</label>
