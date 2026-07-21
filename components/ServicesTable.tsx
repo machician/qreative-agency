@@ -7,13 +7,13 @@ interface ServicesTableProps {
 
 const ServicesTable: React.FC<ServicesTableProps> = ({ isDarkMode }) => {
   return (
-    <div className="relative bg-gradient-to-b from-white via-transparent to-white/100 dark:to-black/80 p-6 sm:p-8 rounded-2xl shadow-lg overflow-hidden">
-      <h2 className="font-bold font-italic text-center lg:text-3xl lg:text-left mb-6 text-gray-900 dark:text-white">WHAT WE DO</h2>
+    <div className="relative bg-gradient-to-b from-white/90 via-transparent to-white/100 dark:from-black/90 dark:via-transparent dark:to-black/80 p-6 sm:p-8 rounded-2xl shadow-lg overflow-hidden">
+      <h2 className="font-bold font-italic text-center lg:text-3xl lg:text-left mb-6 text-gray-900 dark:text-gray-100">WHAT WE DO</h2>
       <table className="w-full border-separate border-spacing-y-6 text-sm sm:text-base lg:text-lg">
         <thead>
           <tr>
-            <th className="text-left font-bold text-black dark:text-gray-300 pb-2 border-b border-gray-300 dark:border-gray-700">SERVICE</th>
-            <th className="text-left font-bold text-black dark:text-gray-300 pb-2 border-b border-gray-300 dark:border-gray-700">DESCRIPTION</th>
+            <th className="text-left font-bold text-black dark:text-gray-200 pb-2 border-b border-gray-300 dark:border-gray-700">SERVICE</th>
+            <th className="text-left font-bold text-black dark:text-gray-200 pb-2 border-b border-gray-300 dark:border-gray-700">DESCRIPTION</th>
           </tr>
         </thead>
         <tbody>

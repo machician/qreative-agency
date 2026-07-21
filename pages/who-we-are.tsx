@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import ClientLogos from "@/components/ClientLogos";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,6 +62,8 @@ export default function WhoWeArePage() {
             We take on only a select number of clients each year to preserve the integrity, creativity, and craftsmanship that define our work. Beyond building products, we invest in and take fractional ownership of the ventures we believe in—turning ideas into living, evolving ecosystems of value and impact.<br></br>
           </p>
         </div>
+        
+        <ClientLogos isDarkMode={isDarkMode} />
 
       <Footer isDarkMode={isDarkMode} />
     </main>

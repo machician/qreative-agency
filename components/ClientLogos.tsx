@@ -9,11 +9,13 @@ interface ClientLogosProps {
 export default function ClientLogos({ isDarkMode }: ClientLogosProps) {
   // Example data - Replace these with your real logos
   const logos = [
-    { name: "Company 1", src: "/logo1.svg" },
-    { name: "Company 2", src: "/logo2.svg" },
-    { name: "Company 3", src: "/logo3.svg" },
-    { name: "Company 4", src: "/logo4.svg" },
-    { name: "Company 5", src: "/logo5.svg" },
+    { name: "SAM.gov", src: "https://upload.wikimedia.org/wikipedia/commons/5/59/SamGovLogo.svg" },
+    { name: "Meta", src: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png" },
+    { name: "Anthropic", src: "https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg" },
+    { name: "Humana", src: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Humana_logo.svg" },
+    { name: "Huel", src: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Huel_Official_Logo.png" },
+    { name: "L'Oréal", src: "https://upload.wikimedia.org/wikipedia/commons/9/9d/L%27Or%C3%A9al_logo.svg" },
+    { name: "SharkNinja", src: "https://upload.wikimedia.org/wikipedia/commons/e/ea/SharkNinja_logo.svg" },
   ];
 
   return (
@@ -24,13 +26,15 @@ export default function ClientLogos({ isDarkMode }: ClientLogosProps) {
       <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
         {logos.map((logo, index) => (
           <div key={index} className="flex items-center justify-center h-12 w-24 relative">
-             {/* Replace <Image /> with <img src="..." /> if you don't have Next.js optimized images setup */}
-              <Image 
+             <Image 
                 src={logo.src} 
                 alt={logo.name} 
                 width={100} 
                 height={50} 
-                className="max-h-full max-w-full object-contain" 
+                // Replaced invalid color-white class with CSS filter for inversion
+                className={`max-h-full max-w-full object-contain transition-all duration-300 ${
+                  isDarkMode ? "invert brightness-0" : ""
+                }`}
               />
           </div>
         ))}

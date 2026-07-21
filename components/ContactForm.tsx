@@ -31,7 +31,7 @@ Message:
 ${formData.message}
     `.trim();
 
-    const mailtoLink = `mailto:chiigbokwedev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:qreativeagencyoperations@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     // Open email client
     window.location.href = mailtoLink;

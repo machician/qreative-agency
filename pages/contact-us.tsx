@@ -1,11 +1,10 @@
-// pages/contact-us.jsx
+// pages/contact-us.tsx
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import router from "next/router";
 import NavBar from "@/components/NavBar";
-import ContactForm from "@/components/ContactForm";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -65,11 +64,19 @@ export default function Contact() {
               From brand to AI, we bring vision to life—one product at a time. We build what doesn’t yet exist or improve on what is working for you.
             </p>
             </div>
-             {/* Form on the right */}
-             <div className="w-full lg:w-3/5 bg-white dark:bg-gray-900/90 backdrop-blur-md rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700">
+            
+            {/* Form on the right - Softened White to fix readability */}
+            <div 
+              className="w-full lg:w-3/5 rounded-xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700"
+              style={{
+                backgroundImage: isDarkMode 
+                  ? 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.4), white)' 
+                  : 'linear-gradient(to bottom, transparent, black, transparent)',
+              }}
+            >
                <h2 className="text-2xl font-bold mb-6 text-center font-mono text-gray-900 dark:text-white">Send Us A Message</h2>
               
-               {/* REPLACE 'your-email@example.com' WITH YOUR ACTUAL EMAIL ADDRESS BELOW */}
+               {/* Contact Form */}
                <form action="https://formsubmit.co/qreativeagencyoperations@gmail.com" method="POST" className="space-y-4 font-mono text-gray-800 dark:text-gray-200">
                 
                  {/* Honeypot - For spam protection */}
@@ -81,26 +88,27 @@ export default function Contact() {
 
                  <div>
                    <label className="block text-sm font-medium mb-1">Name</label>
-                   <input type="text" name="name" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 dark:bg-neutral-800 dark:text-white outline-none transition" />
+                   <input type="text" name="name" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 bg-white dark:bg-neutral-800 dark:text-white outline-none transition" />
                  </div>
 
                  <div>
                    <label className="block text-sm font-medium mb-1">Company</label>
-                   <input type="text" name="company" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 dark:bg-neutral-800 dark:text-white outline-none transition" />
+                   <input type="text" name="company" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 bg-white dark:bg-neutral-800 dark:text-white outline-none transition" />
                  </div>
 
                  <div>
                    <label className="block text-sm font-medium mb-1">Email Address</label>
-                   <input type="email" name="email" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 dark:bg-neutral-800 dark:text-white outline-none transition" />
+                   <input type="email" name="email" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 bg-white dark:bg-neutral-800 dark:text-white outline-none transition" />
                  </div>
 
                  <div>
                    <label className="block text-sm font-medium mb-1">Phone Number</label>
-                   <input type="text" name="phone" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 dark:bg-neutral-800 dark:text-white outline-none transition" />
+                   <input type="text" name="phone" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 bg-white dark:bg-neutral-800 dark:text-white outline-none transition" />
                  </div>
 
                  <div>
-                   <select name="subject" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 dark:bg-neutral-800 dark:text-white outline-none transition bg-white dark:bg-neutral-800">
+                   <label className="block text-sm font-medium mb-1">Subject</label>
+                   <select name="subject" required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 bg-white dark:bg-neutral-800 dark:text-white outline-none transition">
                      <option value="">Select a subject</option>
                      <option value="Product Development">AI Product Development</option>
                      <option value="SAFE Stack Audit">SAFE Stack Audit</option>
@@ -117,7 +125,7 @@ export default function Contact() {
 
                  <div>
                    <label className="block text-sm font-medium mb-1">Message</label>
-                   <textarea name="message" rows={5} required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 dark:bg-neutral-800 dark:text-white outline-none transition resize-none"></textarea>
+                   <textarea name="message" rows={5} required className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-orange-400 bg-white dark:bg-neutral-800 dark:text-white outline-none transition resize-none"></textarea>
                  </div>
 
                  <button type="submit" className="w-full bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 px-4 rounded-md transition-colors duration-200 shadow-md">
